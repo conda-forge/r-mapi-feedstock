@@ -17,7 +17,6 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
-    - lib/R/library/Rcpp/libs/x64  # [win]
 
 requirements:
   build:
@@ -33,8 +32,10 @@ requirements:
     - {{ posix }}coreutils             # [win]
     - {{ posix }}zip                   # [win]
     - cross-r-base {{ r_base }}        # [build_platform != target_platform]
+    - r-rcpp                           # [build_platform != target_platform]
   host:
     - r-base
+    - r-lang
     - r-rcpp
     - r-data.table
     - r-s2
@@ -83,3 +84,17 @@ extra:
   recipe-maintainers:
     - conda-forge/r
     - spiry34
+
+# Package: mapi
+# Type: Package
+# Title: Mapping Averaged Pairwise Information
+# Version: 1.1.3
+# Authors: Sylvain Piry and the authors of mapi package
+# Description: Mapping Averaged Pairwise Information (MAPI) is an exploratory method providing graphical representations summarizing the spatial variation of pairwise metrics (eg. distance, similarity coefficient, ...) computed between georeferenced samples.
+# License: GPL (>= 3)
+# URL: https://www1.montpellier.inrae.fr/CBGP/software/MAPI/
+# Repository: CRAN
+# Depends: R (>= 4.1)
+# LinkingTo: Rcpp
+# Imports: data.table, doParallel, fmesher, foreach, Rcpp, s2, sf
+# Suggests: dggridR, ggplot2, latticeExtra, progress, sp, testthat (>= 3.0.0)
