@@ -12,7 +12,7 @@ source:
   sha256: 6433cd4628974e00649893abf82b7a8c86aae8dbd6ea76a17af5f1e64dd543e0
 
 build:
-  number: 3
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -32,7 +32,7 @@ requirements:
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
-    - r-base >=4.1
+    - r-base
     - r-rcpp
     - r-data.table
     - r-s2
@@ -47,7 +47,7 @@ requirements:
     - r-dggridr
     - r-testthat
   run:
-    - r-base >=4.1
+    - r-base
     - r-rcpp
     - r-data.table
     - r-s2
