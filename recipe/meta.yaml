@@ -32,7 +32,7 @@ requirements:
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
-    - r-base >=4.1
+    - r-base
     - r-rcpp
     - r-data.table
     - r-s2
@@ -47,7 +47,7 @@ requirements:
     - r-dggridr
     - r-testthat
   run:
-    - r-base >=4.1
+    - r-base
     - r-rcpp
     - r-data.table
     - r-s2
