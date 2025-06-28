@@ -24,6 +24,9 @@ build:
     - lib/R/lib/
     - lib/
 
+skip:
+  - win
+
 # Suggests: dggridR, ggplot2, latticeExtra, progress, sp, testthat (>= 3.0.0)
 requirements:
   build:
