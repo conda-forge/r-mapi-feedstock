@@ -17,15 +17,13 @@ build:
   merge_build_host: True  # [win]
   # If this is a new build for the same version, increment the build number.
   number: 10
-  # no skip
-
+  # skip windows builds
+  skip:
+    - win
   # This is required to make R link correctly on Linux.
   rpaths:
     - lib/R/lib/
     - lib/
-
-skip:
-  - win
 
 # Suggests: dggridR, ggplot2, latticeExtra, progress, sp, testthat (>= 3.0.0)
 requirements:
