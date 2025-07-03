@@ -1,4 +1,4 @@
-{% set version = '1.1.3' %}
+{% set version = "1.1.4" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -11,14 +11,14 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mapi_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mapi/mapi_{{ version }}.tar.gz
-  sha256: 6433cd4628974e00649893abf82b7a8c86aae8dbd6ea76a17af5f1e64dd543e0
+  sha256: d28e76a687cf5762968d727bbdafdb5617e6e3ffc02656fe2f1d0b5df9c38a63
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   # If this is a new build for the same version, increment the build number.
-  number: 10
+  number: 0
   # skip windows builds
-  skip: True                     # [win]
+  skip: true  # [win]
   # This is required to make R link correctly on Linux.
   rpaths:
     - lib/R/lib/
@@ -75,9 +75,7 @@ test:
 about:
   home: https://www1.montpellier.inrae.fr/CBGP/software/MAPI/
   license: GPL-3.0-or-later
-  summary: Mapping Averaged Pairwise Information (MAPI) is an exploratory method providing graphical
-    representations summarizing the spatial variation of pairwise metrics (eg. distance,
-    similarity coefficient, ...) computed between georeferenced samples.
+  summary: Mapping Averaged Pairwise Information (MAPI) is an exploratory method providing graphical representations summarizing the spatial variation of pairwise metrics (eg. distance, similarity coefficient, ...) computed between georeferenced samples.
   license_family: GPL3
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
