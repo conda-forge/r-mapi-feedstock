@@ -1,4 +1,4 @@
-{% set version = "1.1.4" %}
+{% set version = "1.1.5" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -11,12 +11,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mapi_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mapi/mapi_{{ version }}.tar.gz
-  sha256: d28e76a687cf5762968d727bbdafdb5617e6e3ffc02656fe2f1d0b5df9c38a63
+  sha256: 164f4135defa94d97fd0b736501e1eff9c1a35a3ca4226f35fad0da0ae694a73
 
 build:
   merge_build_host: true  # [win]
   # If this is a new build for the same version, increment the build number.
-  number: 1
+  number: 0
   # skip windows builds
   skip: true  # [win]
   # This is required to make R link correctly on Linux.
